@@ -1,0 +1,25 @@
+<h1 style="text-align: center">Listing Pokemon</h1>
+<ul>
+
+	<% @pokemons.map do |p| %>
+
+		<li>
+			<a href="/pokemons/<%= p.id %>"><img src="/pokemons/<%= p.id %>.jpg" height="16px" weight="16px"/>
+				<table BORDER="1">
+			<TR>
+				<th>Nom</th> 
+				<th>Element</th>
+				<th>Dresseur</th>
+			</tr>
+			<tr>
+				<td><%= p.name %></td>
+				<td><%= p.element %></td>
+				<td><a href="/show_dresseur/<%= p.dresseur.id %>"><%= p.dresseur.name %></a></td>
+			</tr>
+				</table>
+			</a>
+		</li>
+
+	<% end %>
+
+</ul>
